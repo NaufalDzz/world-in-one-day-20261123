@@ -1,430 +1,530 @@
 // Original flat-vector editorial illustrations and world atlas generated purely in code.
-// Pass 3: taller 100px hero scenes, taller 72px secondary scenes with generous sky/margin around
-// every place pill & stamp, and a taller 290x174 all-continent world atlas with 20 non-overlapping pins.
+// Pass 2: taller 118px hero scenes & 70px secondary scenes, bolder 21-28px callout ribbons
+// tuned for instant legibility at 300px, distinct visual silhouettes, and zero-overlap atlas pins.
 
 import { REGION_META } from './stories.mjs';
 
 export function renderHeroArt(key) {
   switch (key) {
     case 'nvidia':
-      return `<svg viewBox="0 0 266 100" xmlns="http://www.w3.org/2000/svg">
+      return `<svg viewBox="0 0 326 118" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="nvBg3" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#EAF6EE"/>
-            <stop offset="100%" stop-color="#D4EBDC"/>
+          <linearGradient id="nvDark" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0B192C"/>
+            <stop offset="100%" stop-color="#14304B"/>
           </linearGradient>
-          <linearGradient id="nvArea3" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#15803D" stop-opacity="0.28"/>
-            <stop offset="100%" stop-color="#15803D" stop-opacity="0.03"/>
+          <linearGradient id="nvFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#22C55E" stop-opacity="0.40"/>
+            <stop offset="100%" stop-color="#22C55E" stop-opacity="0.03"/>
           </linearGradient>
         </defs>
-        <rect width="266" height="100" fill="url(#nvBg3)"/>
-        <g stroke="#B8D8C2" stroke-width="0.8" stroke-dasharray="3 3">
-          <line x1="8" y1="30" x2="258" y2="30"/>
-          <line x1="8" y1="58" x2="258" y2="58"/>
-          <line x1="8" y1="86" x2="258" y2="86"/>
+        <rect width="326" height="118" fill="url(#nvDark)"/>
+        <g stroke="#294866" stroke-width="0.9" stroke-dasharray="3 3">
+          <line x1="12" y1="36" x2="314" y2="36"/>
+          <line x1="12" y1="64" x2="314" y2="64"/>
+          <line x1="12" y1="92" x2="314" y2="92"/>
         </g>
-        <!-- GPU Silicon Die Left -->
-        <g transform="translate(14,34)">
-          <rect x="6" y="6" width="38" height="38" rx="4" fill="#0F172A" stroke="#15803D" stroke-width="2"/>
-          <rect x="13" y="13" width="24" height="24" rx="2.5" fill="#16A34A"/>
-          <rect x="19" y="19" width="12" height="12" rx="1.5" fill="#DCFCE7"/>
-          <g stroke="#334155" stroke-width="2">
-            <line x1="15" y1="0" x2="15" y2="6"/><line x1="25" y1="0" x2="25" y2="6"/><line x1="35" y1="0" x2="35" y2="6"/>
-            <line x1="15" y1="44" x2="15" y2="50"/><line x1="25" y1="44" x2="25" y2="50"/><line x1="35" y1="44" x2="35" y2="50"/>
-            <line x1="0" y1="15" x2="6" y2="15"/><line x1="0" y1="25" x2="6" y2="25"/><line x1="0" y1="35" x2="6" y2="35"/>
-            <line x1="44" y1="15" x2="50" y2="15"/><line x1="44" y1="25" x2="50" y2="25"/><line x1="44" y1="35" x2="50" y2="35"/>
+        <!-- Iconic GPU Silicon Die Left -->
+        <g transform="translate(20,38)">
+          <g stroke="#94A3B8" stroke-width="2.6" stroke-linecap="round">
+            <line x1="16" y1="0" x2="16" y2="9"/><line x1="28" y1="0" x2="28" y2="9"/><line x1="40" y1="0" x2="40" y2="9"/><line x1="52" y1="0" x2="52" y2="9"/>
+            <line x1="16" y1="57" x2="16" y2="66"/><line x1="28" y1="57" x2="28" y2="66"/><line x1="40" y1="57" x2="40" y2="66"/><line x1="52" y1="57" x2="52" y2="66"/>
+            <line x1="0" y1="16" x2="9" y2="16"/><line x1="0" y1="28" x2="9" y2="28"/><line x1="0" y1="40" x2="9" y2="40"/><line x1="0" y1="52" x2="9" y2="52"/>
+            <line x1="59" y1="16" x2="68" y2="16"/><line x1="59" y1="28" x2="68" y2="28"/><line x1="59" y1="40" x2="68" y2="40"/><line x1="59" y1="52" x2="68" y2="52"/>
           </g>
+          <rect x="9" y="9" width="50" height="48" rx="4" fill="#1E293B" stroke="#4ADE80" stroke-width="2.2"/>
+          <rect x="15" y="15" width="38" height="36" rx="2.5" fill="#15803D"/>
+          <text x="34" y="37" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.5" letter-spacing="0.4" fill="#DCFCE7">NVDA</text>
         </g>
-        <!-- Stock Curve: Dip -> Vertical Breakout -->
-        <path d="M76,60 L106,69 L132,79 L148,81 L160,25 L208,20 L252,13 L252,90 L76,90 Z" fill="url(#nvArea3)"/>
-        <polyline points="76,60 106,69 132,79 148,81" fill="none" stroke="#991B1B" stroke-width="2.8" stroke-linejoin="round"/>
-        <polyline points="148,81 160,25 208,20 252,13" fill="none" stroke="#15803D" stroke-width="4" stroke-linejoin="round"/>
-        <circle cx="148" cy="81" r="3.6" fill="#991B1B"/>
-        <circle cx="252" cy="13" r="5.2" fill="#15803D" stroke="#FFFFFF" stroke-width="2"/>
-        <!-- Bold High-Contrast Callout -->
-        <rect x="170" y="37" width="86" height="26" rx="3" fill="#14532D"/>
-        <text x="213" y="55" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="15.5" fill="#FFFFFF">+31.5%</text>
-      </svg>`;
-
-    case 'ukraine':
-      return `<svg viewBox="0 0 266 100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="174" height="100" fill="#CFE4F4"/>
-        <rect x="0" y="61" width="174" height="39" fill="#2B5B84"/>
-        <path d="M0,72 Q30,68 60,72 T120,72 T174,72" fill="none" stroke="#60A5FA" stroke-width="1.4" opacity="0.6"/>
-        <path d="M0,61 L0,50 L18,50 L22,44 L38,44 L42,61 Z" fill="#C7B89E"/>
-        <!-- Listing Corvette Merkury -->
-        <g transform="translate(48,34)">
-          <g transform="rotate(-14 38 22)">
-            <polygon points="0,21 74,18 80,29 8,32" fill="#1E293B"/>
-            <rect x="24" y="7" width="23" height="13" fill="#334155"/>
-            <line x1="35" y1="0" x2="35" y2="8" stroke="#334155" stroke-width="2.2"/>
-          </g>
-          <path d="M26,18 L34,-3 L42,12 L53,1 L48,23 Z" fill="#EF4444"/>
-          <path d="M31,18 L36,5 L42,16 Z" fill="#FDE047"/>
-          <circle cx="48" cy="1" r="9" fill="#475569" opacity="0.5"/>
+        <!-- Stock Rally Bars & Steep Breakout -->
+        <g opacity="0.88">
+          <rect x="112" y="84" width="11" height="16" rx="1.5" fill="#EF4444"/>
+          <rect x="132" y="90" width="11" height="10" rx="1.5" fill="#EF4444"/>
+          <rect x="152" y="92" width="11" height="8" rx="1.5" fill="#F97316"/>
+          <rect x="176" y="70" width="12" height="30" rx="1.5" fill="#22C55E"/>
+          <rect x="199" y="53" width="12" height="47" rx="1.5" fill="#22C55E"/>
+          <rect x="222" y="40" width="12" height="60" rx="1.5" fill="#4ADE80"/>
+          <rect x="245" y="29" width="12" height="71" rx="1.5" fill="#4ADE80"/>
+          <rect x="268" y="19" width="12" height="81" rx="1.5" fill="#86EFAC"/>
         </g>
-        <!-- Incoming Sea Drones -->
-        <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.88">
-          <line x1="124" y1="80" x2="152" y2="75"/>
-          <line x1="134" y1="88" x2="164" y2="83"/>
-        </g>
-        <polygon points="120,81 127,78 126,84" fill="#0F172A"/>
-        <polygon points="130,89 137,86 136,92" fill="#0F172A"/>
-        <!-- Right panel: Russian Refineries Struck -->
-        <rect x="174" y="0" width="92" height="100" fill="#172336"/>
-        <line x1="174" y1="0" x2="174" y2="100" stroke="#FFFFFF" stroke-width="1.5"/>
-        <g transform="translate(187,27)">
-          <circle cx="32" cy="8" r="10" fill="#64748B" opacity="0.55"/>
-          <rect x="4" y="22" width="11" height="33" fill="#64748B"/>
-          <rect x="20" y="14" width="12" height="41" fill="#94A3B8"/>
-          <rect x="38" y="26" width="26" height="29" rx="3" fill="#475569"/>
-          <path d="M14,22 L22,3 L29,18 L37,7 L39,26 L14,26 Z" fill="#F97316"/>
-          <path d="M20,22 L25,11 L31,22 Z" fill="#FDE047"/>
-        </g>
-        <rect x="180" y="6" width="80" height="17" rx="2.5" fill="#991B1B"/>
-        <text x="220" y="18" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="8.8" fill="#FFFFFF">2 REFINERIES</text>
+        <path d="M108,82 L138,91 L158,94 L182,66 L205,49 L228,36 L251,25 L274,15 L304,10 L304,102 L108,102 Z" fill="url(#nvFill)"/>
+        <polyline points="108,82 138,91 158,94" fill="none" stroke="#F87171" stroke-width="3.2" stroke-linejoin="round"/>
+        <polyline points="158,94 182,66 205,49 228,36 251,25 274,15 304,10" fill="none" stroke="#4ADE80" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="313,8 295,5 301,20" fill="#86EFAC"/>
+        <!-- Bold Top-Left Callout Banner -->
+        <rect x="0" y="0" width="176" height="29" fill="#A91D22"/>
+        <text x="10" y="20" font-family="Noto Sans" font-weight="900" font-size="15.5" letter-spacing="0.4" fill="#FFFFFF">HUANG RETURNS</text>
+        <!-- Bold Bottom-Right Metric Tag -->
+        <rect x="122" y="90" width="198" height="23" rx="2.5" fill="#08121E" fill-opacity="0.94" stroke="#4ADE80" stroke-width="1.2"/>
+        <text x="221" y="105.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.6" fill="#FFFFFF">NVDA <tspan fill="#86EFAC">+31.5%</tspan> · NASDAQ <tspan fill="#FDE047">+6.5%</tspan></text>
       </svg>`;
 
     case 'nato':
-      return `<svg viewBox="0 0 266 100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="160" height="100" fill="#153257"/>
-        <g fill="none" stroke="#60A5FA" stroke-opacity="0.38" stroke-width="1.2">
-          <circle cx="88" cy="56" r="19"/>
-          <circle cx="88" cy="56" r="35"/>
-          <circle cx="88" cy="56" r="51"/>
+      return `<svg viewBox="0 0 326 118" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="natoSky" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#112749"/>
+            <stop offset="100%" stop-color="#1E467E"/>
+          </linearGradient>
+        </defs>
+        <rect width="326" height="118" fill="url(#natoSky)"/>
+        <!-- Radar sweep rings right -->
+        <g fill="none" stroke="#60A5FA" stroke-opacity="0.38" stroke-width="1.3">
+          <circle cx="256" cy="54" r="24"/>
+          <circle cx="256" cy="54" r="42"/>
+          <circle cx="256" cy="54" r="60"/>
         </g>
-        <path d="M88,56 L136,27 A51,51 0 0,1 140,76 Z" fill="#38BDF8" fill-opacity="0.26"/>
-        <circle cx="129" cy="43" r="3" fill="#FDE047"/>
-        <g transform="translate(34,37)">
-          <path d="M12,20 L64,20 L78,16 L82,20 L64,24 L12,24 L2,12 L8,12 Z" fill="#F8FAFC"/>
-          <path d="M34,20 L46,2 L52,2 L46,20 Z" fill="#E2E8F0"/>
-          <path d="M34,24 L46,41 L52,41 L46,24 Z" fill="#CBD5E1"/>
-          <ellipse cx="30" cy="14" rx="14" ry="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.4"/>
-        </g>
-        <!-- Right: EU 22nd Sanctions (generous margin above OFFICIAL badge) -->
-        <rect x="160" y="0" width="106" height="100" fill="#EEF3FA"/>
-        <line x1="160" y1="0" x2="160" y2="100" stroke="#FFFFFF" stroke-width="1.5"/>
-        <circle cx="213" cy="33" r="22.5" fill="#003399"/>
-        <g fill="#FFCC00">
-          ${Array.from({ length: 12 }, (_, i) => {
-            const a = (i * Math.PI * 2) / 12 - Math.PI / 2;
-            const cx = 213 + Math.cos(a) * 15.5;
-            const cy = 33 + Math.sin(a) * 15.5;
-            return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="1.9"/>`;
+        <path d="M256,54 L310,25 A60,60 0 0,1 312,80 Z" fill="#38BDF8" fill-opacity="0.24"/>
+        <!-- NATO 32-nation circular council table -->
+        <g transform="translate(106,71)">
+          <ellipse cx="0" cy="0" rx="79" ry="32" fill="#0C1C36" stroke="#60A5FA" stroke-width="1.3" stroke-opacity="0.55"/>
+          <ellipse cx="0" cy="0" rx="66" ry="24.5" fill="#C49A68" stroke="#EDD2AC" stroke-width="1.6"/>
+          <ellipse cx="0" cy="0" rx="43" ry="14" fill="#17345E"/>
+          <polygon points="0,-10 2.8,-2.8 12,0 2.8,2.8 0,10 -2.8,2.8 -12,0 -2.8,-2.8" fill="#FFFFFF"/>
+          ${Array.from({ length: 32 }, (_, i) => {
+            const a = (i * Math.PI * 2) / 32;
+            const cx = Math.cos(a) * 73;
+            const cy = Math.sin(a) * 28;
+            return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="2.8" fill="#F8FAFC"/>`;
           }).join('')}
         </g>
-        <text x="213" y="37.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.5" fill="#FFFFFF">22nd</text>
-        <rect x="168" y="60" width="90" height="17" rx="2.5" fill="#991B1B"/>
-        <text x="213" y="71.8" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="8.8" fill="#FFFFFF">EU SANCTIONS</text>
+        <!-- AWACS E-3 radar aircraft -->
+        <g transform="translate(202,22)">
+          <path d="M12,24 L80,24 L98,19 L102,24 L80,29 L12,29 L0,14 L8,14 Z" fill="#FFFFFF" stroke="#0F203D" stroke-width="1.2"/>
+          <path d="M40,24 L56,3 L64,3 L56,24 Z" fill="#E2E8F0" stroke="#0F203D" stroke-width="0.9"/>
+          <path d="M40,29 L56,49 L64,49 L56,29 Z" fill="#CBD5E1" stroke="#0F203D" stroke-width="0.9"/>
+          <line x1="36" y1="16" x2="36" y2="24" stroke="#94A3B8" stroke-width="2.8"/>
+          <ellipse cx="36" cy="14.5" rx="19" ry="5.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.8"/>
+        </g>
+        <!-- Bold Top-Left Callout Banner -->
+        <rect x="0" y="0" width="176" height="29" fill="#A91D22"/>
+        <text x="10" y="20" font-family="Noto Sans" font-weight="900" font-size="15.5" letter-spacing="0.4" fill="#FFFFFF">32 ALLIES MEET</text>
+        <!-- Bold Bottom-Right Tag -->
+        <rect x="180" y="90" width="140" height="23" rx="2.5" fill="#091322" fill-opacity="0.94" stroke="#60A5FA" stroke-width="1.2"/>
+        <text x="250" y="105.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.6" fill="#FFFFFF">AWACS TO POLAND</text>
+      </svg>`;
+
+    case 'dymer':
+      return `<svg viewBox="0 0 326 118" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="dymSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1E2C45"/>
+            <stop offset="100%" stop-color="#3E506E"/>
+          </linearGradient>
+        </defs>
+        <rect width="326" height="118" fill="url(#dymSky)"/>
+        <!-- Rescue searchlight beams -->
+        <polygon points="58,118 118,22 156,22 100,118" fill="#FEF08A" opacity="0.14"/>
+        <polygon points="248,118 190,26 226,26 286,118" fill="#FEF08A" opacity="0.12"/>
+        <!-- Crescent moon -->
+        <circle cx="294" cy="23" r="9" fill="#FDE68A" opacity="0.92"/>
+        <circle cx="299" cy="21" r="8" fill="#23334F"/>
+        <!-- Ground base -->
+        <rect x="0" y="96" width="326" height="22" fill="#141B26"/>
+        <!-- Five-story residential block -->
+        <g transform="translate(82,16)">
+          <rect x="0" y="4" width="96" height="76" fill="#465670" stroke="#64748B" stroke-width="1.2"/>
+          <!-- Bright warm windows -->
+          <g fill="#FCD34D">
+            <rect x="10" y="13" width="12" height="9" rx="1"/>
+            <rect x="50" y="13" width="12" height="9" rx="1"/>
+            <rect x="30" y="29" width="12" height="9" rx="1"/>
+            <rect x="70" y="29" width="12" height="9" rx="1"/>
+            <rect x="10" y="45" width="12" height="9" rx="1"/>
+            <rect x="50" y="61" width="12" height="9" rx="1"/>
+          </g>
+          <g fill="#1E293B">
+            <rect x="30" y="13" width="12" height="9" rx="1"/>
+            <rect x="70" y="13" width="12" height="9" rx="1"/>
+            <rect x="10" y="29" width="12" height="9" rx="1"/>
+            <rect x="50" y="29" width="12" height="9" rx="1"/>
+            <rect x="30" y="45" width="12" height="9" rx="1"/>
+            <rect x="70" y="45" width="12" height="9" rx="1"/>
+            <rect x="10" y="61" width="12" height="9" rx="1"/>
+            <rect x="30" y="61" width="12" height="9" rx="1"/>
+            <rect x="70" y="61" width="12" height="9" rx="1"/>
+          </g>
+          <!-- Sheared collapsed right section -->
+          <polygon points="96,4 140,4 130,24 114,38 148,52 164,80 96,80" fill="#2B364A" stroke="#475569" stroke-width="1.2"/>
+          <polygon points="100,80 124,55 148,66 168,54 192,80" fill="#525F73"/>
+          <polygon points="118,80 138,63 158,80" fill="#748296"/>
+          <!-- Warm amber rescue glow -->
+          <circle cx="132" cy="56" r="10" fill="#F97316" opacity="0.72"/>
+          <circle cx="132" cy="56" r="5" fill="#FDE047"/>
+        </g>
+        <!-- Rescue crane & truck left -->
+        <line x1="34" y1="96" x2="64" y2="42" stroke="#FACC15" stroke-width="3.8" stroke-linecap="round"/>
+        <line x1="64" y1="42" x2="104" y2="52" stroke="#FACC15" stroke-width="2.8" stroke-linecap="round"/>
+        <rect x="14" y="82" width="38" height="14" rx="2" fill="#DC2626"/>
+        <rect x="40" y="85" width="9" height="5" fill="#DBEAFE"/>
+        <circle cx="28" cy="80" r="3.5" fill="#60A5FA"/>
+        <!-- Bold Top-Left Callout Banner -->
+        <rect x="0" y="0" width="118" height="29" fill="#A91D22"/>
+        <text x="10" y="20" font-family="Noto Sans" font-weight="900" font-size="16" letter-spacing="0.4" fill="#FFFFFF">11 DEAD</text>
+        <!-- Bold Bottom-Right Tag -->
+        <rect x="198" y="90" width="122" height="23" rx="2.5" fill="#091322" fill-opacity="0.94" stroke="#FBBF24" stroke-width="1.2"/>
+        <text x="259" y="105.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.6" fill="#FFFFFF">KYIV REGION</text>
       </svg>`;
 
     default:
-      return `<svg viewBox="0 0 266 100" xmlns="http://www.w3.org/2000/svg"><rect width="266" height="100" fill="#E2E8F0"/></svg>`;
+      return `<svg viewBox="0 0 326 118" xmlns="http://www.w3.org/2000/svg"><rect width="326" height="118" fill="#E2E8F0"/></svg>`;
   }
+}
+
+function cardRibbon(text, bg = '#151D29') {
+  const w = Math.max(82, Math.round(text.length * 8.4 + 16));
+  return `<rect x="0" y="0" width="${w}" height="21" fill="${bg}"/>
+          <text x="7" y="14.8" font-family="Noto Sans" font-weight="900" font-size="11.5" letter-spacing="0.3" fill="#FFFFFF">${text}</text>`;
 }
 
 export function renderCardArt(key) {
   switch (key) {
-    case 'cyber':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#1C1936"/>
-        <g stroke="#6D28D9" stroke-width="1.2" opacity="0.55">
-          <line x1="18" y1="54" x2="58" y2="44"/><line x1="58" y1="44" x2="104" y2="54"/>
+    case 'eu_sanctions':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#183668"/>
+        <g fill="#FACC15" opacity="0.92">
+          ${Array.from({ length: 12 }, (_, i) => {
+            const a = (i * Math.PI * 2) / 12 - Math.PI / 2;
+            const cx = 44 + Math.cos(a) * 19;
+            const cy = 46 + Math.sin(a) * 19;
+            return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="2"/>`;
+          }).join('')}
         </g>
-        <g transform="translate(32,22) scale(0.84)">
-          <path d="M26,2 L50,10 L48,30 C46,42 36,48 26,52 C16,48 6,42 4,30 L2,10 Z" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"/>
-          <path d="M26,2 L50,10 L48,30 C46,42 36,48 26,52 Z" fill="#2563EB"/>
-          <path d="M18,27 L24,33 L35,20" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(98,17)">
+          <polygon points="0,15 39,2 78,15" fill="#E2E8F0"/>
+          <rect x="6" y="17" width="8" height="26" fill="#FFFFFF"/>
+          <rect x="25" y="17" width="8" height="26" fill="#FFFFFF"/>
+          <rect x="45" y="17" width="8" height="26" fill="#FFFFFF"/>
+          <rect x="64" y="17" width="8" height="26" fill="#FFFFFF"/>
+          <rect x="0" y="43" width="78" height="5" fill="#CBD5E1"/>
         </g>
-        <rect x="104" y="16" width="82" height="26" rx="3" fill="#FDE047"/>
-        <text x="145" y="34" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="14.5" fill="#0F172A">$43.9B</text>
+        <circle cx="137" cy="42" r="22" fill="none" stroke="#DC2626" stroke-width="4.4"/>
+        <line x1="121" y1="26" x2="153" y2="58" stroke="#DC2626" stroke-width="4.4" stroke-linecap="round"/>
+        ${cardRibbon('60 BANKS')}
       </svg>`;
 
-    case 'uk_myanmar':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#DCE6F2"/>
-        <g fill="#334155">
-          <rect x="14" y="29" width="18" height="43"/>
-          <polygon points="14,29 23,16 32,29"/>
-          <rect x="32" y="46" width="44" height="26" fill="#475569"/>
+    case 'iran_sanctions':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#E9DFC9"/>
+        <rect x="0" y="45" width="192" height="25" fill="#2A5478"/>
+        <path d="M0,55 Q28,51 56,55 T112,55 T192,55" fill="none" stroke="#93C5FD" stroke-width="1.3" opacity="0.65"/>
+        <!-- Tanker silhouette left -->
+        <g transform="translate(14,34)">
+          <polygon points="0,11 72,11 66,19 6,19" fill="#1E293B"/>
+          <rect x="10" y="4" width="15" height="7" fill="#475569"/>
+          <rect x="31" y="7" width="26" height="4" fill="#991B1B"/>
         </g>
-        <circle cx="23" cy="39" r="5" fill="#FEF3C7" stroke="#0F172A" stroke-width="1"/>
-        <g transform="translate(74,24) scale(0.95)">
-          <line x1="18" y1="4" x2="18" y2="41" stroke="#92400E" stroke-width="2.2"/>
-          <line x1="4" y1="12" x2="32" y2="12" stroke="#92400E" stroke-width="2"/>
-          <path d="M4,12 L0,24 L8,24 Z" fill="#D97706"/>
-          <path d="M32,12 L28,24 L36,24 Z" fill="#D97706"/>
-          <rect x="8" y="39" width="20" height="4" rx="1" fill="#78350F"/>
+        <!-- Brass Padlock right (clear of ribbon) -->
+        <g transform="translate(128,17)">
+          <path d="M12,18 V11 A12,12 0 0,1 36,11 V18" fill="none" stroke="#1E293B" stroke-width="4.6"/>
+          <rect x="6" y="18" width="36" height="29" rx="4" fill="#C26A0E" stroke="#1E293B" stroke-width="2"/>
+          <circle cx="24" cy="30" r="4" fill="#1E293B"/>
+          <rect x="22.3" y="33" width="3.4" height="7" fill="#1E293B"/>
         </g>
-        <rect x="112" y="15" width="76" height="24" rx="2.5" fill="#991B1B" stroke="#FFFFFF" stroke-width="1.2"/>
-        <text x="150" y="31" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11" fill="#FFFFFF">GENOCIDE</text>
+        ${cardRibbon('SHADOW BANKS')}
       </svg>`;
 
-    case 'belgium':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#D9E6F2"/>
-        <rect x="0" y="45" width="194" height="27" fill="#475569"/>
-        <line x1="6" y1="59" x2="188" y2="59" stroke="#F8FAFC" stroke-width="1.5" stroke-dasharray="8 6"/>
-        <rect x="16" y="29" width="9" height="18" fill="#64748B"/>
-        <polygon points="10,20 31,20 27,29 14,29" fill="#1E293B"/>
-        <rect x="13" y="22.5" width="15" height="3.8" fill="#93C5FD"/>
-        <g transform="translate(42,34)">
-          <path d="M2,12 L38,12 L46,9 L48,12 L38,15 L2,15 L0,8 L5,8 Z" fill="#F8FAFC" stroke="#0F172A" stroke-width="1"/>
-          <path d="M18,12 L25,4 L29,4 L25,12 Z" fill="#CBD5E1"/>
+    case 'belgium_strike':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#CFE0EC"/>
+        <rect x="0" y="47" width="192" height="23" fill="#475569"/>
+        <line x1="8" y1="59" x2="184" y2="59" stroke="#F8FAFC" stroke-width="1.6" stroke-dasharray="10 6"/>
+        <!-- ATC Tower left -->
+        <rect x="22" y="33" width="10" height="16" fill="#64748B"/>
+        <polygon points="15,24 39,24 34,33 20,33" fill="#1E293B"/>
+        <rect x="19" y="26.5" width="16" height="3.5" fill="#93C5FD"/>
+        <!-- Grounded Jet center (cleanly separated from departures board) -->
+        <g transform="translate(42,34) scale(0.92)">
+          <path d="M4,13 L68,13 L82,9 L85,13 L68,17 L4,17 L0,8 L8,8 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.2"/>
+          <path d="M30,13 L42,2 L48,2 L42,13 Z" fill="#CBD5E1"/>
         </g>
-        <g transform="translate(98,34)">
-          <path d="M2,12 L38,12 L46,9 L48,12 L38,15 L2,15 L0,8 L5,8 Z" fill="#F8FAFC" stroke="#0F172A" stroke-width="1"/>
-          <path d="M18,12 L25,4 L29,4 L25,12 Z" fill="#CBD5E1"/>
+        <!-- Crisp red HALTS / departures board right (distinct from EU circle-slash) -->
+        <g transform="translate(132,14)">
+          <rect x="0" y="0" width="52" height="38" rx="3" fill="#1E293B" stroke="#0F172A" stroke-width="1.2"/>
+          <rect x="4" y="5" width="44" height="8" rx="1" fill="#DC2626"/>
+          <text x="26" y="11.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="6.8" fill="#FFFFFF">GROUNDED</text>
+          <rect x="5" y="17" width="24" height="3" fill="#94A3B8"/>
+          <rect x="33" y="17" width="14" height="3" fill="#F87171"/>
+          <rect x="5" y="24" width="24" height="3" fill="#94A3B8"/>
+          <rect x="33" y="24" width="14" height="3" fill="#F87171"/>
+          <rect x="5" y="31" width="24" height="3" fill="#94A3B8"/>
+          <rect x="33" y="31" width="14" height="3" fill="#F87171"/>
         </g>
-        <line x1="62" y1="32" x2="88" y2="54" stroke="#DC2626" stroke-width="3.4" stroke-linecap="round"/>
-        <line x1="88" y1="32" x2="62" y2="54" stroke="#DC2626" stroke-width="3.4" stroke-linecap="round"/>
-        <rect x="114" y="7" width="74" height="20" rx="2.5" fill="#991B1B"/>
-        <text x="151" y="20.8" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11" fill="#FFFFFF">14h SHUT</text>
+        ${cardRibbon('14H SHUTDOWN')}
       </svg>`;
 
-    case 'spain':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#F5EFE3"/>
-        <rect x="0" y="0" width="194" height="4" fill="#AA151B"/>
-        <rect x="0" y="4" width="194" height="2.2" fill="#F1BF00"/>
-        <g transform="translate(10,24)">
-          <polygon points="0,11 34,1 68,11" fill="#CBD5E1" stroke="#475569" stroke-width="1"/>
-          <rect x="6" y="12" width="6" height="28" fill="#E2E8F0" stroke="#64748B" stroke-width="0.9"/>
-          <rect x="22" y="12" width="6" height="28" fill="#E2E8F0" stroke="#64748B" stroke-width="0.9"/>
-          <rect x="40" y="12" width="6" height="28" fill="#E2E8F0" stroke="#64748B" stroke-width="0.9"/>
-          <rect x="56" y="12" width="6" height="28" fill="#E2E8F0" stroke="#64748B" stroke-width="0.9"/>
-          <rect x="0" y="40" width="68" height="4.5" fill="#64748B"/>
+    case 'gaza_unrwa':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#E8DEC8"/>
+        <rect x="0" y="53" width="192" height="17" fill="#C2B297"/>
+        <polygon points="10,53 10,28 48,28 58,36 68,53" fill="#8C8375"/>
+        <rect x="18" y="36" width="10" height="10" fill="#475569"/>
+        <rect x="35" y="36" width="10" height="10" fill="#475569"/>
+        <!-- UN Blue Water Tank right -->
+        <g transform="translate(100,19)">
+          <rect x="8" y="8" width="48" height="30" rx="3" fill="#1D70B8" stroke="#0F3C66" stroke-width="1.5"/>
+          <text x="32" y="28.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="15" fill="#FFFFFF">UN</text>
+          <rect x="14" y="38" width="6" height="9" fill="#334155"/>
+          <rect x="44" y="38" width="6" height="9" fill="#334155"/>
+          <path d="M56,25 L68,25 L68,36" fill="none" stroke="#334155" stroke-width="3.2"/>
+          <path d="M68,38 C65,42 65,45 68,45 C71,45 71,42 68,38 Z" fill="#0284C7"/>
         </g>
-        <g transform="translate(90,11)">
-          <rect x="4" y="2" width="88" height="42" rx="2" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1"/>
-          <g transform="rotate(-5 48 23)">
-            <rect x="7" y="11" width="82" height="22" rx="2.5" fill="#ECFDF5" stroke="#15803D" stroke-width="2.2"/>
-            <text x="48" y="26.2" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="12.2" fill="#15803D">AMNESTY</text>
+        ${cardRibbon('UNRWA KILLED')}
+      </svg>`;
+
+    case 'zambia_trial':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#EAE1CE"/>
+        <rect x="0" y="64" width="192" height="6" fill="#198A00"/>
+        <!-- Higher-contrast courthouse left -->
+        <g transform="translate(12,25)">
+          <polygon points="0,12 42,1 84,12" fill="#6F6759"/>
+          <rect x="8" y="13" width="9" height="24" fill="#9A907E"/>
+          <rect x="27" y="13" width="9" height="24" fill="#9A907E"/>
+          <rect x="48" y="13" width="9" height="24" fill="#9A907E"/>
+          <rect x="67" y="13" width="9" height="24" fill="#9A907E"/>
+          <rect x="0" y="37" width="84" height="5" fill="#4B463D"/>
+        </g>
+        <!-- Judge gavel right -->
+        <g transform="translate(116,20)">
+          <g transform="rotate(-32 24 20)">
+            <rect x="8" y="6" width="30" height="13" rx="2.5" fill="#5C2F16"/>
+            <rect x="21" y="19" width="6.5" height="27" rx="1.5" fill="#7D4423"/>
           </g>
+          <rect x="6" y="40" width="48" height="6.5" rx="2" fill="#3B1F0F"/>
         </g>
+        ${cardRibbon('TREASON CASE')}
       </svg>`;
 
-    case 'iran_singer':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#231928"/>
-        <polygon points="48,0 14,72 88,72" fill="#FDE68A" opacity="0.16"/>
-        <g transform="translate(30,24) scale(0.9)">
-          <rect x="7" y="2" width="12" height="19" rx="6" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
-          <line x1="9" y1="8" x2="17" y2="8" stroke="#64748B" stroke-width="1.2"/>
-          <line x1="9" y1="13" x2="17" y2="13" stroke="#64748B" stroke-width="1.2"/>
-          <path d="M4,14 A9,9 0 0,0 22,14" fill="none" stroke="#CBD5E1" stroke-width="1.6"/>
-          <line x1="13" y1="23" x2="13" y2="45" stroke="#CBD5E1" stroke-width="2.2"/>
-          <line x1="5" y1="45" x2="21" y2="45" stroke="#CBD5E1" stroke-width="2.4"/>
+    case 'congo_cobalt':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#E6DEC8"/>
+        <rect x="0" y="50" width="192" height="20" fill="#9A886D"/>
+        <!-- Cobalt ore crate & mineral pile left (well below ribbon) -->
+        <g transform="translate(14,27)">
+          <rect x="0" y="10" width="48" height="23" rx="2" fill="#1D4ED8" stroke="#1E3A8A" stroke-width="1.6"/>
+          <text x="24" y="26" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="12" fill="#FFFFFF">Co</text>
+          <polygon points="53,33 66,14 80,22 94,33" fill="#1E3A8A"/>
+          <polygon points="66,33 78,18 96,33" fill="#2563EB"/>
         </g>
-        <g stroke="#FDA4AF" stroke-width="1.8" fill="none">
-          <path d="M72,51 L72,32 L85,30 L85,48"/>
-          <circle cx="69" cy="51" r="3" fill="#FDA4AF"/>
-          <circle cx="82" cy="48" r="3" fill="#FDA4AF"/>
-          <line x1="64" y1="30" x2="90" y2="54" stroke="#EF4444" stroke-width="2.6"/>
+        <!-- Lowered striped customs barrier gate right -->
+        <rect x="116" y="24" width="8" height="34" fill="#334155"/>
+        <g transform="translate(106,34)">
+          <rect x="0" y="0" width="76" height="10" rx="1.5" fill="#DC2626"/>
+          <rect x="14" y="0" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="36" y="0" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="58" y="0" width="10" height="10" fill="#FFFFFF"/>
         </g>
-        <rect x="104" y="14" width="82" height="25" rx="3" fill="#9F1239" stroke="#FDA4AF" stroke-width="1.2"/>
-        <text x="145" y="30.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="11.8" fill="#FFFFFF">74 LASHES</text>
+        <circle cx="152" cy="19" r="9.5" fill="#B91C1C"/>
+        <rect x="146" y="17.5" width="12" height="3.2" fill="#FFFFFF"/>
+        ${cardRibbon('COBALT HALT')}
       </svg>`;
 
-    case 'korea':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#E8F0FA"/>
-        <path d="M0,51 Q44,28 94,45 T194,36 L194,72 L0,72 Z" fill="#CBD9EC"/>
-        <g transform="translate(8,31)">
-          <path d="M0,15 Q42,4 84,15 L76,19 L8,19 Z" fill="#1E3A8A"/>
-          <rect x="12" y="19" width="60" height="19" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.9"/>
-          <g fill="#334155">
-            <rect x="18" y="24" width="6" height="14"/><rect x="32" y="24" width="6" height="14"/>
-            <rect x="46" y="24" width="6" height="14"/><rect x="60" y="24" width="6" height="14"/>
-          </g>
+    case 'india_nepal':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#F2E7D3"/>
+        <polygon points="0,53 38,18 76,53" fill="#7D8FA3"/>
+        <polygon points="25,30 38,18 51,30 42,28 38,32 33,28" fill="#FFFFFF"/>
+        <polygon points="48,53 94,13 140,53" fill="#5B6E85"/>
+        <polygon points="79,26 94,13 109,26 99,24 94,29 88,24" fill="#FFFFFF"/>
+        <rect x="0" y="53" width="192" height="17" fill="#3B536E"/>
+        <rect x="12" y="47" width="92" height="12" rx="2.5" fill="#1E40AF"/>
+        <rect x="12" y="56" width="92" height="2.8" fill="#F97316"/>
+        <rect x="20" y="50" width="14" height="4.2" rx="1" fill="#DBEAFE"/>
+        <rect x="40" y="50" width="14" height="4.2" rx="1" fill="#DBEAFE"/>
+        <rect x="60" y="50" width="14" height="4.2" rx="1" fill="#DBEAFE"/>
+        <rect x="80" y="50" width="16" height="4.2" rx="1" fill="#FDE047"/>
+        <g transform="translate(128,19)">
+          <ellipse cx="24" cy="37" rx="21" ry="6.5" fill="#B45309"/>
+          <rect x="3" y="26" width="42" height="11" fill="#D97706"/>
+          <ellipse cx="24" cy="26" rx="21" ry="6.5" fill="#F59E0B"/>
+          <rect x="3" y="15" width="42" height="11" fill="#D97706"/>
+          <ellipse cx="24" cy="15" rx="21" ry="6.5" fill="#FBBF24" stroke="#92400E" stroke-width="1"/>
+          <text x="24" y="18.8" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="10.5" fill="#78350F">$</text>
         </g>
-        <circle cx="144" cy="44" r="15.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1"/>
-        <path d="M132,44 A12,12 0 0,1 156,44 A6,6 0 0,1 144,44 A6,6 0 0,0 132,44 Z" fill="#C60C30"/>
-        <path d="M156,44 A12,12 0 0,1 132,44 A6,6 0 0,1 144,44 A6,6 0 0,0 156,44 Z" fill="#003478"/>
-        <rect x="102" y="6" width="86" height="18" rx="2.5" fill="#0F172A"/>
-        <text x="145" y="18.2" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="9.4" fill="#FDE047">1st FEMALE NIS</text>
+        ${cardRibbon('$1.62BN AID')}
       </svg>`;
 
-    case 'nepal':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#FBF2E6"/>
-        <polygon points="0,52 38,18 76,52" fill="#94A3B8"/>
-        <polygon points="26,29 38,18 50,29 42,27 38,31 33,27" fill="#FFFFFF"/>
-        <polygon points="48,52 96,14 144,52" fill="#64748B"/>
-        <polygon points="81,26 96,14 111,26 101,24 96,29 90,24" fill="#FFFFFF"/>
-        <polygon points="120,52 160,22 194,52" fill="#94A3B8"/>
-        <rect x="0" y="54" width="194" height="4" fill="#334155"/>
-        <rect x="28" y="58" width="8" height="14" fill="#475569"/>
-        <rect x="92" y="58" width="8" height="14" fill="#475569"/>
-        <rect x="156" y="58" width="8" height="14" fill="#475569"/>
-        <g transform="translate(20,38)">
-          <rect x="0" y="2" width="90" height="14" rx="3" fill="#1E40AF"/>
-          <rect x="0" y="12" width="90" height="3" fill="#F97316"/>
-          <rect x="8" y="5" width="12" height="5" rx="1" fill="#DBEAFE"/>
-          <rect x="26" y="5" width="12" height="5" rx="1" fill="#DBEAFE"/>
-          <rect x="44" y="5" width="12" height="5" rx="1" fill="#DBEAFE"/>
-          <rect x="62" y="5" width="20" height="5" rx="1" fill="#FDE047"/>
-        </g>
-        <rect x="116" y="7" width="72" height="18" rx="2.5" fill="#9A3412"/>
-        <text x="152" y="19.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="9.6" fill="#FFFFFF">RAIL &amp; AID</text>
+    case 'indonesia_fire':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#272A34"/>
+        <circle cx="98" cy="16" r="15" fill="#4B5563" opacity="0.65"/>
+        <circle cx="122" cy="11" r="17" fill="#6B7280" opacity="0.52"/>
+        <circle cx="148" cy="18" r="14" fill="#4B5563" opacity="0.58"/>
+        <rect x="150" y="16" width="13" height="45" fill="#475569"/>
+        <polygon points="16,61 16,38 46,27 46,38 76,27 76,38 106,27 106,38 144,38 144,61" fill="#1E293B"/>
+        <rect x="0" y="60" width="192" height="10" fill="#111827"/>
+        <path d="M56,60 L69,22 L82,44 L96,17 L110,41 L122,26 L134,60 Z" fill="#EA580C"/>
+        <path d="M68,60 L79,33 L91,50 L102,30 L114,48 L122,60 Z" fill="#FACC15"/>
+        <rect x="24" y="46" width="11" height="8" fill="#F59E0B" opacity="0.75"/>
+        <rect x="41" y="46" width="11" height="8" fill="#F59E0B" opacity="0.75"/>
+        ${cardRibbon('24 DEAD', '#A91D22')}
       </svg>`;
 
-    case 'indonesia_plot':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#F3EFEA"/>
-        <rect x="0" y="0" width="194" height="4.5" fill="#CE1126"/>
-        <g transform="translate(18,24) scale(0.86)">
-          <path d="M22,2 L42,8 L40,28 C38,38 30,43 22,46 C14,43 6,38 4,28 L2,8 Z" fill="#1E293B" stroke="#D97706" stroke-width="2.2"/>
-          <polygon points="22,12 25,20 33,20 27,25 29,33 22,28 15,33 17,25 11,20 19,20" fill="#F59E0B"/>
+    case 'colombia_drone':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#D4E2EC"/>
+        <path d="M0,49 L38,27 L84,46 L138,22 L192,44 L192,70 L0,70 Z" fill="#9BB0C1"/>
+        <rect x="10" y="46" width="32" height="24" fill="#EBE3D5"/>
+        <polygon points="8,46 26,36 44,46" fill="#B45309"/>
+        <rect x="50" y="41" width="56" height="29" fill="#CBD5E1" stroke="#334155" stroke-width="1.2"/>
+        <rect x="63" y="49" width="30" height="11" fill="#1E3A8A"/>
+        <rect x="114" y="48" width="32" height="22" fill="#EBE3D5"/>
+        <polygon points="112,48 130,38 148,48" fill="#B45309"/>
+        <!-- Bold Quadcopter Silhouette right -->
+        <g transform="translate(114,10)">
+          <line x1="6" y1="10" x2="54" y2="10" stroke="#0F172A" stroke-width="3.4"/>
+          <rect x="22" y="6" width="16" height="8" rx="2" fill="#0F172A"/>
+          <line x1="0" y1="6" x2="18" y2="6" stroke="#1E293B" stroke-width="2.6"/>
+          <line x1="42" y1="6" x2="60" y2="6" stroke="#1E293B" stroke-width="2.6"/>
+          <path d="M30,17 L25,29 L35,29 Z" fill="#DC2626"/>
         </g>
-        <g transform="translate(70,31)">
-          <path d="M0,12 L6,4 L12,20 L18,2 L24,22 L30,6 L36,12" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linejoin="round"/>
-          <line x1="4" y1="1" x2="34" y2="24" stroke="#DC2626" stroke-width="2.6"/>
-        </g>
-        <rect x="112" y="15" width="76" height="24" rx="2.5" fill="#991B1B"/>
-        <text x="150" y="30.8" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="10.6" fill="#FFFFFF">6 SUSPECTS</text>
+        <circle cx="88" cy="39" r="9" fill="#DC2626" opacity="0.88"/>
+        <circle cx="88" cy="39" r="4.5" fill="#FDE047"/>
+        ${cardRibbon('DRONE STRIKE')}
       </svg>`;
 
-    case 'fifa':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#173254"/>
-        <ellipse cx="97" cy="74" rx="112" ry="25" fill="#15803D"/>
-        <ellipse cx="97" cy="74" rx="56" ry="13" fill="none" stroke="#BBF7D0" stroke-width="1.2"/>
-        <g transform="translate(83,22) scale(0.95)">
-          <path d="M6,4 L22,4 L20,22 C19,28 16,31 14,32 C12,31 9,28 8,22 Z" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.2"/>
-          <rect x="11" y="31" width="6" height="7" fill="#D97706"/>
-          <rect x="6" y="38" width="16" height="5" rx="1" fill="#92400E"/>
+    case 'fifa_wwc':
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg">
+        <rect width="192" height="70" fill="#142E52"/>
+        <rect x="0" y="38" width="192" height="32" fill="#157347"/>
+        <line x1="0" y1="49" x2="192" y2="49" stroke="#BBF7D0" stroke-width="1.3" opacity="0.72"/>
+        <ellipse cx="96" cy="49" rx="34" ry="8.5" fill="none" stroke="#BBF7D0" stroke-width="1.3" opacity="0.72"/>
+        <!-- Golden Trophy center -->
+        <g transform="translate(74,15)">
+          <path d="M4,2 L28,2 L25,24 C24,31 20,34 16,36 C12,34 8,31 7,24 Z" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.4"/>
+          <rect x="12" y="35" width="8" height="8" fill="#D97706"/>
+          <rect x="6" y="42" width="20" height="5" rx="1" fill="#92400E"/>
         </g>
-        <!-- Clean sky gap above 2031 & 2035 banners below 12 ZURICH · FIFA -->
-        <rect x="8" y="25" width="66" height="27" rx="3" fill="#0F294A" stroke="#60A5FA" stroke-width="1.2"/>
-        <text x="41" y="40.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="13" fill="#FFFFFF">2031</text>
-        <text x="41" y="48.5" text-anchor="middle" font-family="Noto Sans" font-weight="800" font-size="6.5" fill="#93C5FD">4 AMERICAS</text>
-        <rect x="120" y="25" width="66" height="27" rx="3" fill="#0F3D3E" stroke="#5EEAD4" stroke-width="1.2"/>
-        <text x="153" y="40.5" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="13" fill="#FFFFFF">2035</text>
-        <text x="153" y="48.5" text-anchor="middle" font-family="Noto Sans" font-weight="800" font-size="6.5" fill="#99F6E4">UK 4 NATIONS</text>
-      </svg>`;
-
-    case 'nigeria':
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="194" height="72" fill="#E8F4EC"/>
-        <rect x="0" y="0" width="17" height="72" fill="#008751"/>
-        <rect x="17" y="0" width="17" height="72" fill="#FFFFFF"/>
-        <rect x="34" y="0" width="17" height="72" fill="#008751"/>
-        <g fill="#1E293B" opacity="0.2">
-          <rect x="58" y="32" width="13" height="40"/><rect x="75" y="21" width="15" height="51"/>
-          <rect x="94" y="38" width="13" height="34"/>
+        <!-- Crisp Classic Football right -->
+        <g transform="translate(144,40)">
+          <circle cx="0" cy="0" r="15" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+          <polygon points="0,-6.5 6,-2 3.8,5 -3.8,5 -6,-2" fill="#0F172A"/>
+          <line x1="0" y1="-6.5" x2="0" y2="-15" stroke="#0F172A" stroke-width="1.2"/>
+          <line x1="6" y1="-2" x2="14" y2="-5.5" stroke="#0F172A" stroke-width="1.2"/>
+          <line x1="-6" y1="-2" x2="-14" y2="-5.5" stroke="#0F172A" stroke-width="1.2"/>
+          <line x1="3.8" y1="5" x2="9.5" y2="12" stroke="#0F172A" stroke-width="1.2"/>
+          <line x1="-3.8" y1="5" x2="-9.5" y2="12" stroke="#0F172A" stroke-width="1.2"/>
         </g>
-        <g transform="translate(64,29) scale(0.95)">
-          <rect x="4" y="14" width="32" height="27" rx="2" fill="#0F172A"/>
-          <rect x="0" y="10" width="40" height="5" rx="1" fill="#008751"/>
-          <line x1="14" y1="2" x2="14" y2="10" stroke="#334155" stroke-width="2"/>
-          <circle cx="14" cy="2" r="2.5" fill="#334155"/>
-          <line x1="26" y1="2" x2="26" y2="10" stroke="#334155" stroke-width="2"/>
-          <circle cx="26" cy="2" r="2.5" fill="#334155"/>
-        </g>
-        <rect x="112" y="15" width="76" height="24" rx="3" fill="#008751" stroke="#FFFFFF" stroke-width="1.2"/>
-        <text x="150" y="31" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="12" fill="#FFFFFF">2027 BID</text>
+        ${cardRibbon('2031 & 2035')}
       </svg>`;
 
     default:
-      return `<svg viewBox="0 0 194 72" xmlns="http://www.w3.org/2000/svg"><rect width="194" height="72" fill="#E2E8F0"/></svg>`;
+      return `<svg viewBox="0 0 192 70" xmlns="http://www.w3.org/2000/svg"><rect width="192" height="70" fill="#E2E8F0"/></svg>`;
   }
 }
 
-// Clean equirectangular world atlas (290x172) with 20 non-overlapping pins across all continents
+// Clean equirectangular world atlas (268x172) with 17 strictly non-overlapping numbered pins
 function project(lat, lon) {
-  const x = 6 + ((lon + 180) / 360) * 278;
-  const y = 4 + ((82 - lat) / 140) * 164;
+  const x = 6 + ((lon + 180) / 360) * 256;
+  const y = 6 + ((82 - lat) / 140) * 160;
   return [x, y];
 }
 
-const PIN_OVERRIDES = {
-  1:  [38.0, -122.0],
-  4:  [26.0, -93.0],
-  5:  [59.0, -10.0],
-  6:  [55.5, 8.5],
-  7:  [39.0, -11.5],
-  12: [44.5, 11.5],
-  3:  [56.5, 29.0],
-  2:  [30.0, 21.0],
-  8:  [35.5, 54.0],
-  13: [7.0, 3.0],
-  10: [24.0, 77.5],
-  11: [-7.5, 107.0],
-  9:  [36.5, 131.0],
-  21: [8.0, 40.5],
-  24: [7.5, -72.5],
-  26: [19.4, -155.3],
-  27: [42.0, 69.5],
-  30: [42.0, 112.0],
-  32: [-42.5, 173.0],
-  33: [-16.5, 167.5],
+// Geographically faithful coordinates matched cleanly to our stylized world atlas with zero overlap
+const PIN_COORDS = {
+  1:  [41.0, -116.0],   // US (centered on North America)
+  12: [7.5,  -85.0],    // Colombia (northern South America)
+  26: [-16.0, -64.0],   // Brazil (central-east South America)
+  4:  [55.5,  -2.5],    // Brussels / EU (#4 & #6)
+  13: [40.5,   4.0],    // Zurich / FIFA
+  2:  [56.5,  21.0],    // Poland / NATO
+  3:  [51.0,  40.0],    // Dymer, Ukraine
+  7:  [29.5,  33.0],    // Gaza
+  5:  [33.5,  55.5],    // Iran
+  9:  [-2.5,  15.5],    // DR Congo
+  8:  [-18.5, 29.0],    // Zambia
+  33: [43.0,  71.5],    // Tajikistan
+  10: [22.5,  80.0],    // India–Nepal
+  11: [-7.0, 107.0],    // Java, Indonesia
+  29: [37.0, 129.0],    // Seoul, S. Korea
+  34: [-33.0, 148.0],   // Australia
+  35: [-42.5, 169.5],   // Wellington, NZ
 };
+
+export function checkPinSpacing(stories) {
+  const pts = stories
+    .filter((s) => PIN_COORDS[s.id])
+    .map((s) => {
+      const [lat, lon] = PIN_COORDS[s.id];
+      const [x, y] = project(lat, lon);
+      const r = s.id <= 3 ? 6.8 : 5.8;
+      return { id: s.id, x, y, r };
+    });
+  let minGap = Infinity;
+  let closest = null;
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
+      const gap = d - (pts[i].r + pts[j].r);
+      if (gap < minGap) {
+        minGap = gap;
+        closest = [pts[i].id, pts[j].id, Number(gap.toFixed(1))];
+      }
+    }
+  }
+  return { pinCount: pts.length, minGap: Number(minGap.toFixed(1)), closest };
+}
 
 export function renderWorldMap(stories) {
   const land = [
     // North & Central America
-    'M 16,23 L 38,15 L 62,19 L 82,28 L 98,35 L 94,47 L 82,57 L 74,67 L 64,74 L 60,84 L 53,81 L 48,69 L 39,60 L 32,45 L 18,37 L 11,30 Z',
+    'M 15,23 L 36,15 L 58,19 L 77,27 L 91,35 L 87,47 L 76,56 L 68,66 L 59,74 L 55,83 L 49,80 L 44,68 L 36,60 L 29,44 L 17,37 L 11,29 Z',
     // Greenland
-    'M 99,8 L 125,7 L 131,18 L 117,31 L 104,25 Z',
+    'M 91,8 L 115,7 L 121,18 L 108,30 L 96,25 Z',
     // Cuba
-    'M 67,72 L 77,73 L 77,76 L 67,75 Z',
+    'M 62,72 L 72,73 L 72,76 L 62,75 Z',
     // South America
-    'M 71,85 L 87,84 L 104,97 L 111,108 L 103,128 L 90,152 L 84,161 L 80,155 L 80,133 L 73,112 L 67,97 Z',
+    'M 65,85 L 81,84 L 97,97 L 103,108 L 95,128 L 83,152 L 78,160 L 74,154 L 74,132 L 67,112 L 62,97 Z',
     // UK & Ireland
-    'M 137,30 L 142,30 L 143,41 L 136,41 Z',
+    'M 127,30 L 132,30 L 133,41 L 126,41 Z',
     // Iceland
-    'M 126,19 L 133,19 L 132,24 L 125,23 Z',
+    'M 116,19 L 123,19 L 122,24 L 115,23 Z',
     // Eurasia
-    'M 134,51 L 140,43 L 147,41 L 149,23 L 161,15 L 179,18 L 209,15 L 244,19 L 274,24 L 271,37 L 255,47 L 249,55 L 252,64 L 241,73 L 232,85 L 225,75 L 216,88 L 209,88 L 202,75 L 193,71 L 186,78 L 177,75 L 173,65 L 164,60 L 156,55 L 152,61 L 149,55 L 142,57 L 134,55 Z',
+    'M 124,51 L 130,43 L 136,41 L 138,23 L 149,15 L 165,18 L 193,15 L 225,19 L 253,24 L 250,37 L 236,47 L 230,55 L 233,64 L 222,73 L 214,85 L 208,75 L 199,88 L 193,88 L 187,75 L 179,71 L 172,78 L 164,75 L 160,65 L 152,60 L 144,55 L 140,61 L 138,55 L 131,57 L 124,55 Z',
     // Africa
-    'M 136,60 L 152,57 L 169,63 L 179,73 L 187,85 L 180,105 L 171,128 L 159,140 L 151,132 L 148,108 L 140,95 L 131,85 L 131,69 Z',
+    'M 126,60 L 140,57 L 156,63 L 165,73 L 172,85 L 166,105 L 158,128 L 146,140 L 139,132 L 137,108 L 129,95 L 121,85 L 121,69 Z',
     // Madagascar
-    'M 183,115 L 188,115 L 186,129 L 181,127 Z',
+    'M 169,115 L 173,115 L 171,129 L 167,127 Z',
     // Japan
-    'M 255,47 L 260,43 L 262,54 L 256,60 Z',
+    'M 236,47 L 240,43 L 242,54 L 237,60 Z',
     // Philippines
-    'M 241,82 L 247,83 L 247,93 L 241,92 Z',
+    'M 223,82 L 228,83 L 228,93 L 223,92 Z',
     // Indonesia
-    'M 225,95 L 241,99 L 256,100 L 255,106 L 237,105 L 223,98 Z',
+    'M 208,95 L 223,99 L 237,100 L 236,106 L 219,105 L 206,98 Z',
     // Australia
-    'M 232,114 L 255,111 L 267,125 L 262,141 L 246,143 L 232,133 Z',
+    'M 214,114 L 236,111 L 247,125 L 242,141 L 227,143 L 214,133 Z',
     // New Zealand
-    'M 273,138 L 280,136 L 282,150 L 274,153 Z',
+    'M 252,138 L 259,136 L 261,150 L 253,153 Z',
   ];
 
-  const [ux, uy] = project(49.0, 32.0);
-  const [bx, by] = project(30.0, 21.0);
-
-  const pins = stories.map((s) => {
-    const [lat, lon] = PIN_OVERRIDES[s.id] || [s.lat, s.lon];
+  const pinStories = stories.filter((s) => PIN_COORDS[s.id]);
+  const pins = pinStories.map((s) => {
+    const [lat, lon] = PIN_COORDS[s.id];
     const [x, y] = project(lat, lon);
-    const col = REGION_META[s.region]?.color || '#1E293B';
+    const col = REGION_META[s.region]?.color || '#334155';
     const isHero = s.id <= 3;
-    const isBrief = s.id > 13;
-    const r = isHero ? 7.6 : isBrief ? 5.8 : 6.6;
-    const fs = isHero ? 8.2 : isBrief ? 6.6 : 7.4;
+    const r = isHero ? 6.8 : 5.8;
+    const fs = isHero ? 8.0 : 6.9;
     return `<g>
-      <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${col}" stroke="#FFFFFF" stroke-width="${isBrief ? 1.1 : 1.35}"/>
-      <text x="${x.toFixed(1)}" y="${(y + fs * 0.34).toFixed(1)}" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="${fs}" fill="#FFFFFF">${s.id}</text>
+      <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${col}" stroke="#FFFFFF" stroke-width="1.3"/>
+      <text x="${x.toFixed(1)}" y="${(y + fs * 0.35).toFixed(1)}" text-anchor="middle" font-family="Noto Sans" font-weight="900" font-size="${fs}" fill="#FFFFFF">${s.id}</text>
     </g>`;
   }).join('');
 
-  return `<svg viewBox="0 0 290 172" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-    <rect width="290" height="172" rx="3" fill="#E4EFF7" stroke="#C5D4E2" stroke-width="1"/>
-    <g stroke="#CEE0ED" stroke-width="0.6">
-      <line x1="0" y1="43" x2="290" y2="43"/>
-      <line x1="0" y1="99" x2="290" y2="99" stroke-dasharray="3 3"/>
-      <line x1="0" y1="140" x2="290" y2="140"/>
-      <line x1="76" y1="0" x2="76" y2="172"/>
-      <line x1="145" y1="0" x2="145" y2="172"/>
-      <line x1="214" y1="0" x2="214" y2="172"/>
+  return `<svg viewBox="0 0 268 172" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <rect width="268" height="172" rx="3" fill="#E6EFF4" stroke="#CBD5DC" stroke-width="1"/>
+    <g stroke="#D3E0E8" stroke-width="0.6">
+      <line x1="0" y1="43" x2="268" y2="43"/>
+      <line x1="0" y1="99" x2="268" y2="99" stroke-dasharray="3 3"/>
+      <line x1="0" y1="140" x2="268" y2="140"/>
+      <line x1="70" y1="0" x2="70" y2="172"/>
+      <line x1="134" y1="0" x2="134" y2="172"/>
+      <line x1="198" y1="0" x2="198" y2="172"/>
     </g>
-    <g fill="#DBD1BE" stroke="#B2A58D" stroke-width="0.7" stroke-linejoin="round">
+    <g fill="#DCD4C0" stroke="#B6AC96" stroke-width="0.7" stroke-linejoin="round">
       ${land.map((d) => `<path d="${d}"/>`).join('')}
     </g>
-    <path d="M${ux.toFixed(1)},${uy.toFixed(1)} Q${((ux + bx) / 2 - 4).toFixed(1)},${((uy + by) / 2 + 4).toFixed(1)} ${bx.toFixed(1)},${by.toFixed(1)}" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="2.5 2"/>
     ${pins}
   </svg>`;
 }
